@@ -1,0 +1,35 @@
+.image{
+   background-color:"green";
+   display:'flex';
+   flex:1;
+   /* height: fit-content; */
+   height: 600px;
+}
+
+.product-name-text{
+    justify-self: center;
+    align-items: center;
+}
+
+.product-price-text{
+    justify-self: center;
+    align-items: center;
+}
+
+.size-count-con{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    justify-content: space-around;
+}
+
+.image-cont{
+     display: flex;
+    flex: 1;
+}
+
+.image{
+      width: 100%;         /* full width of container */
+  height: auto;        /* adjusts height to preserve aspect ratio */
+  display: block;      /* removes bottom whitespace from inline img */
+}
