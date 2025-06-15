@@ -1,0 +1,9 @@
+1) start keycloak
+	- go to \bin folder of keycloak
+	- enter command "./kc.bat start-dev"
+
+2) start FE
+
+3) credentials for default tenant.
+	- username : anu
+	- password : anuki@123
