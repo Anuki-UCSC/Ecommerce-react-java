@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { RichTreeView } from "@mui/x-tree-view/RichTreeView";
-import { Button, Divider, Grid, Slider, Typography } from "@mui/material";
+import {
+  Button,
+  Divider,
+  Grid,
+  Slider,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import "./sidePanelFilter.css";
 
 const ProductsTree = [
@@ -63,6 +70,8 @@ const ProductsTree = [
 ];
 
 const SidePanelFilter = () => {
+  const theme = useTheme();
+
   const sizeList = ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL"];
 
   const [price, setPrice] = useState([0, 40000]);
@@ -129,6 +138,17 @@ const SidePanelFilter = () => {
           getAriaValueText={valuetext}
         />
       </div>
+      <Button
+        variant="outlined"
+        className="hover-button"
+        style={{
+          "--button-hover-bg": theme.palette.primary.main,
+          "--button-text": theme.palette.text.primary,
+          "--button-border": theme.palette.text.primary,
+        }}
+      >
+        Reset all filters
+      </Button>
     </div>
   );
 };

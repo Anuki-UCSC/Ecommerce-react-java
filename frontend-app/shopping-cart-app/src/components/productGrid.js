@@ -1,19 +1,43 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, useTheme } from "@mui/material";
 import React from "react";
 import "./productGrid.css";
 
 const ProductBox = ({ product }) => {
   const { productName, imageUrl, sizes, price } = product;
+  const theme = useTheme();
   return (
-    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} className="product-box">
       <div className="image-cont">
         <img src={imageUrl} alt="High Waist Trouser" className="image" />
       </div>
+      <Button
+        variant="outlined"
+        className="hover-button"
+        style={{
+          "--button-hover-bg": theme.palette.primary.main,
+          "--button-text": theme.palette.text.primary,
+          "--button-border": theme.palette.text.primary,
+        }}
+      >
+        Add to Cart
+      </Button>
 
       <h4 className="product-name-text">{productName}</h4>
       <h4 className="product-price-text"> {price}.00 LKR</h4>
       <div className="size-count-con">
-        <Button variant="outlined">X</Button>
+        <Button
+          variant="outlined"
+          disableRipple
+          sx={{
+            pointerEvents: "none",
+            "&:hover": {
+              backgroundColor: "transparent",
+              borderColor: "inherit",
+            },
+          }}
+        >
+          X
+        </Button>
         <Button variant="outlined">X</Button>
         <Button variant="outlined">X</Button>
         <Button variant="outlined">X</Button>
